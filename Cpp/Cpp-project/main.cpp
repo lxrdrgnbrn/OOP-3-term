@@ -45,4 +45,5 @@ int main()
    {
        cout<<"The vector is empty"<<endl;
    }
+   delete(mass);
 }

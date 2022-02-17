@@ -6,10 +6,10 @@
 
 enum Except{CircleNotExist};
 
-class Circle
+class Circle // класс окружности созданной по двум точкам
 {
 private:
-    double x,y,x2,y2;
+    double x,y,x2,y2; // точки окружности, где x,y - центр окружности, а x2,y2 - точка лежащая на этой окружности
 
 public:
     //Конструктор без параметра
