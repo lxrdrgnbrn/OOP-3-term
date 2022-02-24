@@ -4,16 +4,16 @@
 #include <cstdlib>
 #include <ctime>
 
-class Damage
+class Damage // класс расчета урона оружия
 {
 protected:
-    double _Damage;//стандартный урон оружия
+    double _damage;//стандартный урон оружия
     int Level;//Уровень персонажа
 
 public:
     Damage();//конструктор без параметров
     void SetLevel(int Level);// Сеттер уровня
-    void SetDamage(double _Damage);// Сеттер урона
+    void SetDamage(double _damage);// Сеттер урона
     double Attack_Speed();// Скорость атаки в секунду
     int GetLevel();// Геттер уровня
     double GetDamage();// Геттер урона

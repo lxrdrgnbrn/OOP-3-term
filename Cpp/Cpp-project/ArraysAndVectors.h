@@ -11,18 +11,18 @@ enum Exception{Empty};//Структура ошибок
 
 namespace  Array
 {
-    int* Write_Array(int m);//Заполнение массива длиной m
-    void Print_Array(int* ar,int m);//Вывод массива
-    int Sum_Array(int* ar,int m);//Сумма элементов массива
-    void ArrayToFile(int* ar,int m, string &s);//Запись массива в файл
-    void ArrayFromFile(int* &ar, int &m,string &s);//Взять массив из файла
+    int* fillArray(int m);//Заполнение массива длиной m
+    void printArray(int* arr, int m);//Вывод массива
+    int sumArray(int* arr, int m);//Сумма элементов массива
+    void saveArrayToFile(int* arr, string &s, int m);//Запись массива в файл
+    void loadArrayFromFile(int* arr, string &s);//Взять массив из файла
 }
 
 namespace Vectors
 {
-    vector<float> Enter_Vector(int m);//Заполнение вектора длиной m
-    void Print_Vector(vector <float> &vc,int m);//Вывод вектора
-    float Sum_VectorEl(vector <float> &vc,int m);//Сумма элементов вектора
+    vector<float> fillVector(int m);//Заполнение вектора длиной m
+    void printVector(const vector <float> &vc);//Вывод вектора
+    float sumVectorElement(const vector <float> &vc);//Сумма элементов вектора
 }
 
 #endif // ARRAYSANDVECTORS_H

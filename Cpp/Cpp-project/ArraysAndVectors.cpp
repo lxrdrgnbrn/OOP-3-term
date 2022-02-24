@@ -5,7 +5,7 @@ using namespace std;
 
 namespace Array
 {
-int* Write_Array(int m)//Заполнение массива длиной m рандомными числами
+int* fillArray(int m)//Заполнение массива длиной m рандомными числами
     {
         if (m>0)
         {
@@ -18,47 +18,48 @@ int* Write_Array(int m)//Заполнение массива длиной m ра
         }
         else throw Empty;
 }
-void Print_Array(int* ar,int m)//Вывод массива
+void printArray(int* arr, int m)//Вывод массива
     {
       cout<<"Array: "<<endl;
-        if ((m>0)&&(ar!=nullptr))
+        if ((m>0)&&(arr!=nullptr))
         {
             for(int i=0;i<m;i++)
             {
-                cout<<ar[i]<<" ";
+                cout<<arr[i]<<" ";
             }
             cout<<endl;
         }
         else throw Empty;
 }
 
-int Sum_Array(int* ar,int m)//Сумма всех элементов массива
+int sumArray(int* arr, int m)//Сумма всех элементов массива
 {
-    if ((m>0)&&(ar!=nullptr))
+    if ((m>0)&&(arr!=nullptr))
     {
         int sum=0;
         for(int i=0;i<m;i++)
         {
-            sum+=ar[i];
+            sum+=arr[i];
         }
     return sum;
     }
     else throw Empty;
 }
-void ArrayToFile(int* ar,int m,string &s)//Запись массива в файл
+void saveArrayToFile(int* arr, string &s, int m)//Запись массива в файл
 {
-    if ((m>0)&&(ar!=nullptr))
+    if ((m>0)&&(arr!=nullptr))
     {
         ofstream f(s);
         for (int i=0;i<m;i++)
         {
-            f<<ar[i]<<endl;
+            f<<arr[i]<<endl;
         }
     }
     else throw Empty;
 }
-void ArrayFromFile(int* &ar, int &m,string &s)//Взять массив из файла
+void loadArrayFromFile(int* arr, string &s)//Загрузка массива из файла
 {
+    delete(arr);
     ifstream f;
     f.open(s);
     int k=0,b=0;
@@ -67,19 +68,18 @@ void ArrayFromFile(int* &ar, int &m,string &s)//Взять массив из ф�
         f>>b;
         k++;
     }
-    m=k-1;
-    ar=new int[k-1];
+    arr=new int[k-1];
     f.close();
     f.open(s);
     for(int i=0;i<k-1;i++)
     {
-        f>>ar[i];
+        f>>arr[i];
     }
 }
 }
 namespace Vectors
 {
-vector <float> Enter_Vector(int m)//Заполнение вектора длиной m
+vector <float> fillVector(int m)//Заполнение вектора длиной m
 {
     if (m>0)
     {
@@ -92,8 +92,9 @@ vector <float> Enter_Vector(int m)//Заполнение вектора длин
     }
     else throw Empty;
 }
-void Print_Vector(vector <float> &vc,int m)//Вывод вектора
+void printVector(vector<float> vc)//Вывод вектора
 {
+    int m = size(vc);
     cout<<"Vector: "<<endl;
     if ((m>0)&&(vc.empty()==false))
     {
@@ -105,8 +106,9 @@ void Print_Vector(vector <float> &vc,int m)//Вывод вектора
     }
     else throw Empty;
 }
-float Sum_VectorEl(vector <float> &vc,int m)//Сумма всех элементов вектора
+float sumVectorElement(vector <float> vc)//Сумма всех элементов вектора
 {
+    int m = size(vc);
     if ((m>0)&&(vc.empty()==false))
     {
         int sum=0;

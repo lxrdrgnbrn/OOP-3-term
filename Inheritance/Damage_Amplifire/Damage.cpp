@@ -3,12 +3,12 @@
 Damage::Damage()
 {
     Level=0;
-    _Damage=0;
+    _damage=0;
 }
 
-void Damage::SetDamage(double _Damage)
+void Damage::SetDamage(double _damage)
 {
-    this->_Damage=_Damage;
+    this->_damage=_damage;
 }
 
 void Damage::SetLevel(int Level)
@@ -18,7 +18,7 @@ void Damage::SetLevel(int Level)
 
 double Damage::GetDamage()
 {
-    return _Damage;
+    return _damage;
 }
 
 int Damage::GetLevel()
@@ -33,12 +33,12 @@ double Damage::Attack_Speed()
 
 double Damage::Total_Damage()
 {
-    return (_Damage*Level*0.5+Critical_Damage())*Attack_Speed()*60;
+    return (_damage*Level*0.5+Critical_Damage())*Attack_Speed()*60;
 }
 
 double Damage::Critical_Damage()
 {
     srand(time(0));
-    return _Damage*Level*0.5*(double)(rand()%10);
+    return _damage*Level*0.5*(double)(rand()%10);
 }
 

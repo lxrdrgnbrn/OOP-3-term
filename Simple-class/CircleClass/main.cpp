@@ -25,10 +25,10 @@ int main()
 
     try
     {
-        cout<<"Radius: "<<C.Radius()<<endl;
-        cout<<"Diameter: "<<C.Diameter()<<endl;
-        cout<<"Length: "<<C.Length()<<endl;
-        cout<<"Square: "<<C.Square()<<endl;
+        cout<<"Radius: "<<C.getRadius()<<endl;
+        cout<<"Diameter: "<<C.getDiameter()<<endl;
+        cout<<"Length: "<<C.getLength()<<endl;
+        cout<<"Square: "<<C.getSquare()<<endl;
         cout<<endl;
     }
     catch (Except e)
@@ -43,7 +43,7 @@ int main()
     //Возьмём площадь ещё раз, чтобы проверить работают ли методы класса в массиве
     try
     {
-        cout<<"Massive_1 square: "<<C_mass[0].Square()<<endl;
+        cout<<"Massive_1 square: "<<C_mass[0].getSquare()<<endl;
         cout<<endl;
     }
     catch (Except e)
@@ -59,7 +59,7 @@ int main()
     //Методы работают с динамически созданным объектом
     try
     {
-        cout<<"Massive_2 square: "<<C_DMass[0].Square()<<endl;
+        cout<<"Massive_2 square: "<<C_DMass[0].getSquare()<<endl;
         cout<<endl;
     }
     catch (Except e)
@@ -80,7 +80,7 @@ int main()
         cout<<"("<<C_Pmass[i]->getX2()<<","<<C_Pmass[i]->getY2()<<")"<<endl;
         try
         {
-            cout<<"Massive_3 square: "<<C_Pmass[i]->Square()<<endl;
+            cout<<"Massive_3 square: "<<C_Pmass[i]->getSquare()<<endl;
             cout<<endl;
         }
         catch (Except e)

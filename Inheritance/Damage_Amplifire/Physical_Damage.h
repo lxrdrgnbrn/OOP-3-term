@@ -7,8 +7,10 @@ class Physical_Damage: public Damage
 {
 public:
     Physical_Damage();//конструктор без параметров
-    Physical_Damage(int Level, double _Damage);//конструктор c параметрами
+    Physical_Damage(int Level, double _damage);//конструктор c параметрами
     double Bleeding();// Урон от кровотечения в секунду
+    double AddDamage();// Дополнительный урон от физ модификатора
+    double Critical_Damage() override;// Критический урон
     double Total_Damage() override;// Итоговый урон нанесенный физическим модификатором
 };
 

@@ -53,6 +53,80 @@
                              <name>Damage</name>
                             </MObject>
                            </base-MObject>
+                           <members>
+                            <qlist>
+                             <item>
+                              <MClassMember>
+                               <uid>{f0a6363f-bdac-4878-a674-138b94806822}</uid>
+                               <type>1</type>
+                               <declaration>-double: _damage</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{af02fe9c-3a25-4950-b079-e97dd7274038}</uid>
+                               <type>1</type>
+                               <declaration>-int: Level</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{ba23720e-8a9e-455a-9e76-b58a33ec1cbc}</uid>
+                               <type>2</type>
+                               <declaration>+Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{2e12d685-184e-4dab-9fdc-d857ecee3c6c}</uid>
+                               <type>2</type>
+                               <declaration>+void SetLevel(int Level)</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{6eff3dd0-9db3-48d1-80a1-8a5000302b67}</uid>
+                               <type>2</type>
+                               <declaration>+void SetDamage(double _damage)</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{17b66557-4f53-494d-85f6-71326ffdf0ad}</uid>
+                               <type>2</type>
+                               <declaration>+double Attack_Speed()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{b9765364-920a-4b80-b901-3c91eaa809fb}</uid>
+                               <type>2</type>
+                               <declaration>+ int GetLevel()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{783e1cc2-bedc-47ee-a446-214c54eb9cd1}</uid>
+                               <type>2</type>
+                               <declaration>+double GetDamage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{e092e01e-09ff-42a8-b301-215fbe0c4917}</uid>
+                               <type>2</type>
+                               <declaration>+virtual double Critical_Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{cddbae87-b880-4926-818b-3cf9f2a3df4d}</uid>
+                               <type>2</type>
+                               <declaration>+virtual double Total_Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                            </qlist>
+                           </members>
                           </MClass>
                          </instance>
                         </target>
@@ -109,46 +183,46 @@
                             <qlist>
                              <item>
                               <MClassMember>
-                               <uid>{ffe29011-8e98-4db6-867d-3e7d10171965}</uid>
+                               <uid>{301f3f89-c2c2-4914-82fa-6dc2328f142b}</uid>
                                <type>2</type>
-                               <declaration>Magical_Damage()</declaration>
+                               <declaration>+Magical_Damage()</declaration>
                               </MClassMember>
                              </item>
                              <item>
                               <MClassMember>
-                               <uid>{e71dc227-51a6-4486-a6df-38f72a1ecaf3}</uid>
+                               <uid>{9c00bdbc-0033-40bc-913e-5f08f8cc6051}</uid>
                                <type>2</type>
-                               <declaration>Magical_Damage(int Level, double _Damage)</declaration>
+                               <declaration>+Magical_Damage(int Level, double _Damage)</declaration>
                               </MClassMember>
                              </item>
                              <item>
                               <MClassMember>
-                               <uid>{2405dc5b-f780-420e-b0a8-78f9de952787}</uid>
+                               <uid>{7331c4b6-b44e-4a0d-8f2b-08c307fe0e5c}</uid>
                                <type>2</type>
-                               <declaration>double Add_Damage()</declaration>
+                               <declaration>+double Add_Damage()</declaration>
                               </MClassMember>
                              </item>
                              <item>
                               <MClassMember>
-                               <uid>{073afbb3-877e-41ce-b4e0-885e11d7287b}</uid>
+                               <uid>{2a6f89cd-f001-4f9e-9e0c-4cc72316a658}</uid>
                                <type>2</type>
-                               <declaration>double Gradual_Damage()</declaration>
+                               <declaration>+double Gradual_Damage()</declaration>
                               </MClassMember>
                              </item>
                              <item>
                               <MClassMember>
-                               <uid>{68347694-e4bf-4dd8-a1f7-b863bdf82780}</uid>
+                               <uid>{df2c19fd-d9fb-45d7-aecf-3f7b1c2ca84e}</uid>
                                <type>2</type>
                                <properties>8</properties>
-                               <declaration>double Total_Damage()</declaration>
+                               <declaration>+double Total_Damage()</declaration>
                               </MClassMember>
                              </item>
                              <item>
                               <MClassMember>
-                               <uid>{91c4f4fc-4a81-43e1-9420-64334423c9af}</uid>
+                               <uid>{34fdfba7-6ee3-4b4f-a86b-87b0e448c4de}</uid>
                                <type>2</type>
                                <properties>8</properties>
-                               <declaration>double Critical_Damage()</declaration>
+                               <declaration>+double Critical_Damage()</declaration>
                               </MClassMember>
                              </item>
                             </qlist>
@@ -205,6 +279,54 @@
                              </relations>
                             </MObject>
                            </base-MObject>
+                           <members>
+                            <qlist>
+                             <item>
+                              <MClassMember>
+                               <uid>{1e115384-2af6-4c16-b407-dcfef5a8ebda}</uid>
+                               <type>2</type>
+                               <declaration>+Physical_Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{aaf0de6c-5482-4df7-9c2c-8347dd2f3baa}</uid>
+                               <type>2</type>
+                               <declaration>+Physical_Damage(int Level, double _damage)</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{819afc1d-d5c4-4d1d-b967-e46ce712358a}</uid>
+                               <type>2</type>
+                               <declaration>+double Bleeding()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{a36ad41b-bb2d-4ed4-babf-da0753f1d7a6}</uid>
+                               <type>2</type>
+                               <declaration>+double AddDamage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{b3f75343-10ba-4294-8bad-e55ab6121929}</uid>
+                               <type>2</type>
+                               <properties>8</properties>
+                               <declaration>+double Critical_Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                             <item>
+                              <MClassMember>
+                               <uid>{2edb8c12-f97b-4d57-87ac-49a32395bf78}</uid>
+                               <type>2</type>
+                               <properties>8</properties>
+                               <declaration>+double Total_Damage()</declaration>
+                              </MClassMember>
+                             </item>
+                            </qlist>
+                           </members>
                           </MClass>
                          </instance>
                         </target>
@@ -242,12 +364,12 @@
                                     </base-DElement>
                                     <object>{907fda4c-5798-4fb2-826b-5f2218197148}</object>
                                     <name>Damage</name>
-                                    <pos>x:320;y:60</pos>
-                                    <rect>x:-75;y:-50;w:150;h:100</rect>
-                                    <auto-sized>false</auto-sized>
+                                    <pos>x:315;y:60</pos>
+                                    <rect>x:-100;y:-110;w:200;h:220</rect>
                                     <visual-role>0</visual-role>
                                    </DObject>
                                   </base-DObject>
+                                  <show-all-members>true</show-all-members>
                                  </DClass>
                                 </instance>
                                </item>
@@ -263,12 +385,12 @@
                                     </base-DElement>
                                     <object>{50fa397f-7961-457b-9c9e-026f1e501b4f}</object>
                                     <name>Magical_Damage</name>
-                                    <pos>x:500;y:360</pos>
-                                    <rect>x:-80;y:-85;w:160;h:170</rect>
-                                    <auto-sized>false</auto-sized>
+                                    <pos>x:445;y:395</pos>
+                                    <rect>x:-130;y:-75;w:260;h:150</rect>
                                     <visual-role>0</visual-role>
                                    </DObject>
                                   </base-DObject>
+                                  <show-all-members>true</show-all-members>
                                  </DClass>
                                 </instance>
                                </item>
@@ -285,11 +407,11 @@
                                     <object>{930af9b8-62ea-42f8-94cb-4aaf9175c61f}</object>
                                     <name>Physical_Damage</name>
                                     <pos>x:130;y:360</pos>
-                                    <rect>x:-85;y:-80;w:170;h:160</rect>
-                                    <auto-sized>false</auto-sized>
+                                    <rect>x:-130;y:-75;w:260;h:150</rect>
                                     <visual-role>0</visual-role>
                                    </DObject>
                                   </base-DObject>
+                                  <show-all-members>true</show-all-members>
                                  </DClass>
                                 </instance>
                                </item>
@@ -329,9 +451,25 @@
                                  </DInheritance>
                                 </instance>
                                </item>
+                               <item>
+                                <instance type="DAnnotation">
+                                 <DAnnotation>
+                                  <base-DElement>
+                                   <DElement>
+                                    <uid>{9c98334f-d08e-45b5-9a23-c3d370ebf2c8}</uid>
+                                   </DElement>
+                                  </base-DElement>
+                                  <text>private(-)
+public(+)</text>
+                                  <pos>x:35;y:75</pos>
+                                  <rect>x:0;y:0;w:101;h:46</rect>
+                                  <auto-sized>false</auto-sized>
+                                 </DAnnotation>
+                                </instance>
+                               </item>
                               </qlist>
                              </elements>
-                             <last-modified>1642070269745</last-modified>
+                             <last-modified>1645423551302</last-modified>
                              <toolbarid>Classes</toolbarid>
                             </MDiagram>
                            </base-MDiagram>

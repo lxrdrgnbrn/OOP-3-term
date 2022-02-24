@@ -8,15 +8,13 @@ using namespace Vectors;
 int main()
 {
    srand(time(NULL));
-   int n;
-   cout<<"Enter n: ";
-   cin>>n;
+   int n = 10;
    int* mass;
    try
    {
-   mass=Write_Array(n);
-   Print_Array(mass,n);
-   cout<<"Sum of array: "<<Sum_Array(mass,n)<<endl;
+   mass=fillArray(n);
+   printArray(mass, n);
+   cout<<"Sum of array: "<<sumArray(mass, n)<<endl;
    }
    catch (Exception error)
    {
@@ -25,10 +23,10 @@ int main()
    try
    {
    string FName="test.txt";
-   ArrayToFile(Write_Array(n),n,FName);
-   ArrayFromFile(mass,n,FName);
+   saveArrayToFile(fillArray(n),FName, n);
+   loadArrayFromFile(mass, FName);
    cout<<"Array from file"<<endl;
-   Print_Array(mass,n);
+   printArray(mass, n);
    }
    catch (Exception error)
    {
@@ -37,9 +35,9 @@ int main()
    try
    {
    vector <float> vec;
-   vec=Enter_Vector(n);
-   Print_Vector(vec,n);
-   cout<<"Sum of vector: "<<Sum_VectorEl(vec,n)<<endl;
+   vec=fillVector(n);
+   printVector(vec);
+   cout<<"Sum of vector: "<<sumVectorElement(vec)<<endl;
    }
    catch (Exception error)
    {

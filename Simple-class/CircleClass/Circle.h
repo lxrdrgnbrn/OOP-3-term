@@ -42,16 +42,16 @@ public:
     //Методы
 
     // Вычисляет радиус окружности
-    double Radius()const;
+    double getRadius()const;
 
     //Вычисляет диаметр окружности
-    double Diameter()const;
+    double getDiameter()const;
 
     //Вычисляет длину окружности
-    double Length()const;
+    double getLength()const;
 
     //Вычисляет площадь окружности
-    double Square()const;
+    double getSquare()const;
     
 
 

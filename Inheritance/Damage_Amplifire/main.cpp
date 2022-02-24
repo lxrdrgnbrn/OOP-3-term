@@ -21,6 +21,7 @@ int main()
     cout<<endl;
     cout<<"Physical Damage"<<endl;   
     cout<<"Bleeding damage per second: "<<PD.Bleeding()<<endl;
+    cout<<"Additional physic damage: "<<PD.AddDamage()<<endl;
     cout<<"Critical Damage: "<<PD.Critical_Damage()<<endl; 
     cout<<"Total Physical Damage: "<<PD.Total_Damage()<<endl; 
     cout<<endl;
@@ -35,5 +36,6 @@ int main()
     cout<<endl;
     cout<<"Total Damage: "<<MD->Total_Damage()+PD.Total_Damage()<<endl;
     cout<<endl;
+
     return 0;
 }
