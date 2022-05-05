@@ -29,7 +29,7 @@ public:
     double Precent()const;//Перевод в проценты
 
 private:
-    double x,y;
+    double x,y; // операнды
 
 };
 

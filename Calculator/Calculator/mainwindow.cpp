@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
+    // Слоты и сигналы чтобы не прописывать к каждой кнопке обработчик событий
     connect(ui->pushButton_1,SIGNAL(clicked()),this,SLOT(Digit()));
     connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(Digit()));
     connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(Digit()));
@@ -23,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_Div,SIGNAL(clicked()),this,SLOT(Handler()));
     connect(ui->pushButton_Pow,SIGNAL(clicked()),this,SLOT(Handler()));
 
+    // делаем кнопку триггерной чтобы устанавливать флаг при нажатии
     ui->pushButton_Plus->setCheckable(true);
     ui->pushButton_Minus->setCheckable(true);
     ui->pushButton_Multiply->setCheckable(true);
@@ -35,7 +38,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::Digit()
+void MainWindow::Digit()//процедура считывания цифры с кнопки
 {
     QPushButton *button=(QPushButton *)sender();
     QString new_label;
@@ -46,7 +49,7 @@ void MainWindow::Digit()
     ui->label->setText(new_label);
 }
 
-void MainWindow::CheckFlag()
+void MainWindow::CheckFlag() // Смена флага всех операций
 {
     ui->pushButton_Plus->setChecked(false);
     ui->pushButton_Minus->setChecked(false);
@@ -55,22 +58,23 @@ void MainWindow::CheckFlag()
     ui->pushButton_Pow->setChecked(false);
 }
 
-void MainWindow::Handler()
+void MainWindow::Handler()// обработчик нажатия на кнопку операций
 {
-    CheckFlag();
+    CheckFlag();// отчищаем флаги всех кнопок
     QPushButton *button=(QPushButton *)sender();
-    button->setChecked(true);
-    op.setX((ui->label->text()).toDouble());
-    ui->label->clear();
+    button->setChecked(true); // устанавливаем флаг true на нажатой кнопке
+    //проверка флага и вызов функции этой кнопки происходит при нажатии "="
+    op.setX((ui->label->text()).toDouble());// передаем число в поле x
+    ui->label->clear();// отчищаем экран
 }
 
-void MainWindow::on_pushButton_Dot_clicked()
+void MainWindow::on_pushButton_Dot_clicked()// кнопка точки
 {
     if(!(ui->label->text().contains(".")))
       ui->label->setText(ui->label->text()+".");
 }
 
-void MainWindow::on_pushButton_Negative_clicked()
+void MainWindow::on_pushButton_Negative_clicked() // кнопка смены знака
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
@@ -78,7 +82,7 @@ void MainWindow::on_pushButton_Negative_clicked()
     ui->label->setText(new_label);
 }
 
-void MainWindow::on_pushButton_Percent_clicked()
+void MainWindow::on_pushButton_Percent_clicked() // процент
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
@@ -88,13 +92,15 @@ void MainWindow::on_pushButton_Percent_clicked()
 
 
 
-void MainWindow::on_pushButton_Equal_clicked()
+void MainWindow::on_pushButton_Equal_clicked() // кнопка равно
 {
     QString new_label;
+    // проверяем было ли введено второе число
     if(ui->label->text()=="")
        op.setY(op.getX());
     else
         op.setY((ui->label->text()).toDouble());
+    // проверяем какая кнопка была нажата и вызываем функцию этой кнопки
     if(ui->pushButton_Plus->isChecked())
     {
         new_label=QString::number(op.Summ());
@@ -134,7 +140,7 @@ void MainWindow::on_pushButton_Equal_clicked()
 
 }
 
-void MainWindow::on_pushButton_Sin_clicked()
+void MainWindow::on_pushButton_Sin_clicked() // синус
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
@@ -142,15 +148,23 @@ void MainWindow::on_pushButton_Sin_clicked()
     ui->label->setText(new_label);
 }
 
-void MainWindow::on_pushButton_Ln_clicked()
+void MainWindow::on_pushButton_Ln_clicked() // логарифм
 {
+
     QString new_label;
     op.setX((ui->label->text()).toDouble());
+    try
+    {
     new_label=QString::number(op.Ln());
     ui->label->setText(new_label);
+    }
+    catch (Except e)
+    {
+        ui->label->setText("Не существует");
+    }
 }
 
-void MainWindow::on_pushButton_Cos_clicked()
+void MainWindow::on_pushButton_Cos_clicked() // косинус
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
@@ -158,7 +172,7 @@ void MainWindow::on_pushButton_Cos_clicked()
     ui->label->setText(new_label);
 }
 
-void MainWindow::on_pushButton_Exp_clicked()
+void MainWindow::on_pushButton_Exp_clicked() // экспонента
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
@@ -166,13 +180,13 @@ void MainWindow::on_pushButton_Exp_clicked()
     ui->label->setText(new_label);
 }
 
-void MainWindow::on_pushButton_AC_clicked()
+void MainWindow::on_pushButton_AC_clicked() // очистка
 {
     ui->label->clear();
     CheckFlag();
 }
 
-void MainWindow::on_pushButton_Tan_clicked()
+void MainWindow::on_pushButton_Tan_clicked() // тангенс
 {
     QString new_label;
     op.setX((ui->label->text()).toDouble());
